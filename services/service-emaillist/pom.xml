@@ -2,25 +2,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.3</version>
-		<relativePath/>
+		<relativePath />
 	</parent>
-		
+
 	<groupId>com.poscodx.msa</groupId>
 	<artifactId>service-emaillist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+
 	<properties>
 		<java.version>21</java.version>
 		<spring-cloud.version>2024.0.0</spring-cloud.version>
 		<mybatis.version>3.0.4</mybatis.version>
 	</properties>
-	
+
 	<dependencies>
 		<!-- springboot dev tools -->
 		<dependency>
@@ -41,6 +41,12 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
+		<!-- spring cloud config client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
 		<!-- springboot web starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,10 +62,10 @@
 
 		<!-- mariadb jdbc driver -->
 		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
-		
+
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -67,7 +73,7 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -79,14 +85,14 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-		
-	
+
+
 	<build>
 		<finalName>service-emaillist</finalName>
-		
+
 		<plugins>
-		
-			<!-- springboot maven plugin -->        
+
+			<!-- springboot maven plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -98,12 +104,12 @@
 						</exclude>
 						<exclude>
 							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-devtools</artifactId>		
+							<artifactId>spring-boot-devtools</artifactId>
 						</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
-			
+
 			<!-- maven resource plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -122,11 +128,11 @@
 									<directory>src/main/resources/script</directory>
 								</resource>
 							</resources>
-						</configuration>						
+						</configuration>
 					</execution>
 				</executions>
-			</plugin>			
-						
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
